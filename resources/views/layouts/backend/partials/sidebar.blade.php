@@ -41,6 +41,13 @@
                     </a>
                 </li>
 
+                <li class="{{ Request::is('admin/tag*') ? 'active' : '' }}">
+                    <a href="{{route('admin.tag.index')}}">
+                        <i class="material-icons">label</i>
+                        <span>Tag</span>
+                    </a>
+                </li>
+
                 <li class="header">
                     System
                 </li>
@@ -94,7 +101,7 @@
     <!-- Footer -->
     <div class="legal">
         <div class="copyright">
-            &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+            &copy; <?php echo date('Y'); ?> <a href="javascript:void(0);">AdminBSB - Material Design</a>.
         </div>
         <div class="version">
             <b>Version: </b> 1.0.5
