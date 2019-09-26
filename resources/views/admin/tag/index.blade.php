@@ -34,6 +34,7 @@
                                     <th>Name</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
+                                    <th>Actions</th>
                                 </tr>
                                 </thead>
 
@@ -44,6 +45,18 @@
                                    <td>{{$tag->name}}</td>
                                    <td>{{$tag->created_at}}</td>
                                    <td>{{$tag->created_at}}</td>
+                                   <td class="text-center">
+                                       <a href="{{route('admin.tag.edit', $tag->id)}}" class="btn btn-info waves-effect">
+                                           <i class="material-icons">edit</i>
+                                       </a>
+                                       <button class="btn btn-danger waves-effect" type="button" onclick="deleteTag({{ $tag->id }})">
+                                           <i class="material-icons">delete</i>
+                                       </button>
+                                       <form id="delete-form-{{ $tag->id }}" action="{{ route('admin.tag.destroy',$tag->id) }}" method="POST" style="display: none;">
+                                           @csrf
+                                           @method('DELETE')
+                                       </form>
+                                   </td>
                                </tr>
                                    @endforeach
                                </tbody>
@@ -60,8 +73,6 @@
 
 
 @push('js')
-
-
 
     @endpush
 
