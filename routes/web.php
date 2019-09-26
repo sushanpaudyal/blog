@@ -26,6 +26,10 @@ Route::group(['as' => 'admin.','prefix' => 'admin', 'namespace' => 'Admin', 'mid
 
    // Tag Routes
     Route::resource('tag', 'TagController');
+
+    // Category Route
+    Route::resource('category', 'CategoryController');
+
 });
 
 Route::group(['as' => 'author.','prefix' => 'author', 'namespace' => 'Author', 'middleware' => ['auth', 'author']], function(){
