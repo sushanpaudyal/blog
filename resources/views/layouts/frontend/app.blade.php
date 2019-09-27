@@ -56,6 +56,17 @@
 
 {!! Toastr::message() !!}
 
+<script>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    toastr.error('{{ $error }}', 'Error', {
+        closeButton : true,
+        progressBar : true,
+    });
+    @endforeach
+    @endif
+</script>
+
 <script src="{{asset('assets/frontend/js/scripts.js')}}"></script>
 
 @stack('js')

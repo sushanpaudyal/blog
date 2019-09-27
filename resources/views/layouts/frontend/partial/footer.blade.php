@@ -41,8 +41,10 @@
 
                     <h4 class="title"><b>SUBSCRIBE</b></h4>
                     <div class="input-area">
-                        <form>
-                            <input class="email-input" type="text" placeholder="Enter your email">
+                        <form method="post" action="{{route('subscriber.store')}}">
+                            @csrf
+
+                            <input class="email-input" name="email" type="email" placeholder="Enter your email" required>
                             <button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
                         </form>
                     </div>
