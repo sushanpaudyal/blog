@@ -38,6 +38,10 @@ Route::group(['as' => 'admin.','prefix' => 'admin', 'namespace' => 'Admin', 'mid
     Route::get('/subscriber', 'SubscriberController@index')->name('subscriber.index');
     Route::delete('/subscriber/{subscriber}', 'SubscriberController@destroy')->name('subscriber.destroy');
 
+    // Settings
+    Route::get('/settings', 'SettingsController@index')->name('settings');
+    Route::put('profile-update', 'SettingsController@profileUpdate')->name('profile.update');
+
 
 
 });
