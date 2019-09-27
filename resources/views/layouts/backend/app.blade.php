@@ -38,6 +38,10 @@
     <!-- Toaster -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
+    <!-- Select CSS -->
+    <!-- Bootstrap Select Css -->
+    <link href="{{asset('assets/backend/plugins/bootstrap-select/css/bootstrap-select.css')}}" rel="stylesheet" />
+
     @stack('css')
 
 </head>
@@ -129,6 +133,8 @@
 <script src="{{asset('assets/backend/plugins/flot-charts/jquery.flot.categories.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/flot-charts/jquery.flot.time.js')}}"></script>
 
+
+
 <!-- Sparkline Chart Plugin Js -->
 <script src="{{asset('assets/backend/plugins/jquery-sparkline/jquery.sparkline.js')}}"></script>
 
@@ -200,6 +206,26 @@
     })
     }
 </script>
+
+<!-- TinyMCE -->
+<script src="{{asset('assets/backend/plugins/tinymce/tinymce.js')}}"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+
+        //TinyMCE
+        tinymce.init({
+            selector: "textarea#tinymce",
+            theme: "modern",
+            height: 300,
+        });
+        tinymce.suffix = ".min";
+        tinyMCE.baseURL = '{{asset('assets/backend/plugins/tinymce')}}';
+    });
+</script>
+
+
 
 @stack('js')
 
