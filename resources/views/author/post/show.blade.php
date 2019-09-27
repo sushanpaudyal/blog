@@ -15,10 +15,7 @@
                 <i class="material-icons">done</i>
                 <span>Approve</span>
             </button>
-            <form method="post" action="{{ route('admin.post.approve',$post->id) }}" id="approval-form" style="display: none">
-                @csrf
-                @method('PUT')
-            </form>
+
         @else
             <button type="button" class="btn btn-success pull-right" disabled>
                 <i class="material-icons">done</i>
@@ -83,10 +80,6 @@
 @endsection
 
 @push('js')
-    <!-- Select Plugin Js -->
-    <script src="{{ asset('assets/backend/plugins/bootstrap-select/js/bootstrap-select.js') }}"></script>
-    <!-- TinyMCE -->
-    <script src="{{ asset('assets/backend/plugins/tinymce/tinymce.js') }}"></script>
-    <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
+
 
 @endpush
