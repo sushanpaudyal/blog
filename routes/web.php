@@ -33,6 +33,9 @@ Route::group(['as' => 'admin.','prefix' => 'admin', 'namespace' => 'Admin', 'mid
     // Post Route
     Route::resource('post', 'PostController');
 
+    Route::put('/post/{id}/approve', 'PostController@approval')->name('post.approve');
+    Route::get('/pending/post', 'PostController@pending')->name('post.pending');
+
 
 });
 

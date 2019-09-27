@@ -11,13 +11,11 @@
         <!-- Vertical Layout | With Floating Label -->
         <a href="{{ route('admin.post.index') }}" class="btn btn-danger waves-effect">BACK</a>
         @if($post->is_approved == false)
-            <button type="button" class="btn btn-success waves-effect pull-right" onclick="approvePost({{ $post->id }})">
-                <i class="material-icons">done</i>
-                <span>Approve</span>
+            <button type="button" class="btn btn-danger waves-effect pull-right" disabled>
+                <span>Pending</span>
             </button>
-
         @else
-            <button type="button" class="btn btn-success pull-right" disabled>
+            <button type="button" class="btn btn-success waves-effect pull-right" disabled>
                 <i class="material-icons">done</i>
                 <span>Approved</span>
             </button>
