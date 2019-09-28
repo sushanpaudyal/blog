@@ -17,6 +17,10 @@ Auth::routes();
 
 Route::post('subscriber', 'SubscriberController@store')->name('subscriber.store');
 
+Route::group(['middleware' => ['auth']], function (){
+    Route::post('/favorite/{post}/add', 'FavoriteController@add')->name('post.favorite');
+});
+
 
 Route::group(['as' => 'admin.','prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function(){
     // Admin Dashboard
