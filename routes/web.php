@@ -48,6 +48,9 @@ Route::group(['as' => 'admin.','prefix' => 'admin', 'namespace' => 'Admin', 'mid
 
     Route::put('password-update', 'SettingsController@updatePassword')->name('password.update');
 
+    // Favorites
+    Route::get('/favorite', 'FavoriteController@index')->name('favorite.index');
+
 
 
 });
@@ -63,4 +66,8 @@ Route::group(['as' => 'author.','prefix' => 'author', 'namespace' => 'Author', '
     Route::get('/settings', 'SettingsController@index')->name('settings');
     Route::put('profile-update', 'SettingsController@profileUpdate')->name('profile.update');
     Route::put('password-update', 'SettingsController@updatePassword')->name('password.update');
+
+
+    // Favorites
+    Route::get('/favorite', 'FavoriteController@index')->name('favorite.index');
 });
