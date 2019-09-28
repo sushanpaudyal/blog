@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index')->name('indexpage');
 
+Route::get('/post/{slug}', 'PostController@details')->name('post.details');
+
 Auth::routes();
 
 Route::post('subscriber', 'SubscriberController@store')->name('subscriber.store');
