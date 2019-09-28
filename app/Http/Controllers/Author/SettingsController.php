@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Author;
 
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
@@ -15,7 +15,7 @@ use Intervention\Image\Facades\Image;
 class SettingsController extends Controller
 {
     public function index(){
-        return view ('admin.settings');
+        return view ('author.settings');
     }
 
     public function profileUpdate(Request $request){
@@ -50,7 +50,7 @@ class SettingsController extends Controller
         $user->image = $imageName;
         $user->about = $request->about;
         $user->save();
-       Toastr::success('Profile Successfully Updated :)','Success');
+        Toastr::success('Profile Successfully Updated :)','Success');
         return redirect()->back();
     }
 

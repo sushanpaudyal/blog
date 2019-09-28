@@ -42,6 +42,8 @@ Route::group(['as' => 'admin.','prefix' => 'admin', 'namespace' => 'Admin', 'mid
     Route::get('/settings', 'SettingsController@index')->name('settings');
     Route::put('profile-update', 'SettingsController@profileUpdate')->name('profile.update');
 
+    Route::put('password-update', 'SettingsController@updatePassword')->name('password.update');
+
 
 
 });
@@ -51,4 +53,10 @@ Route::group(['as' => 'author.','prefix' => 'author', 'namespace' => 'Author', '
 
     // Post Route
     Route::resource('post', 'PostController');
+
+
+    // Settings
+    Route::get('/settings', 'SettingsController@index')->name('settings');
+    Route::put('profile-update', 'SettingsController@profileUpdate')->name('profile.update');
+    Route::put('password-update', 'SettingsController@updatePassword')->name('password.update');
 });

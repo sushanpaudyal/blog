@@ -3,7 +3,7 @@
     <!-- User Info -->
     <div class="user-info">
         <div class="image">
-            <img src="{{asset('assets/backend/images/user.png')}}" width="48" height="48" alt="User" />
+            <img src="{{asset( \Illuminate\Support\Facades\Storage::disk('public')->url('profile/'.Auth::user()->image))}}" width="48" height="48" alt="User" />
         </div>
         <div class="info-container">
             <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</div>
@@ -11,7 +11,9 @@
             <div class="btn-group user-helper-dropdown">
                 <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                 <ul class="dropdown-menu pull-right">
-                    <li><a href=""><i class="material-icons">person</i>Profile</a></li>
+
+                    <li><a href=" {{ Auth::user()->role_id == 1 ? route('admin.settings') : route('author.settings') }}"><i class="material-icons">settings</i>Profile</a></li>
+
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
@@ -117,6 +119,14 @@
                     <a href="{{route('author.post.index')}}">
                         <i class="material-icons">library_books</i>
                         <span>Post</span>
+                    </a>
+                </li>
+
+
+                <li class="{{ Request::is('author/settings') ? 'active' : '' }}">
+                    <a href="{{route('author.settings')}}">
+                        <i class="material-icons">settings</i>
+                        <span>Settings</span>
                     </a>
                 </li>
 
