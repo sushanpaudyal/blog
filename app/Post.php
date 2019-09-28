@@ -21,5 +21,9 @@ class Post extends Model
     public function favorite_to_users(){
         return $this->belongsToMany(User::class)->withTimestamps();
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
 

@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function favorite_posts(){
         return $this->belongsToMany(Post::class)->withTimestamps();
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
