@@ -27,6 +27,8 @@ Auth::routes();
 
 Route::post('subscriber', 'SubscriberController@store')->name('subscriber.store');
 
+Route::get('/search', 'SearchController@search')->name('search');
+
 Route::group(['middleware' => ['auth']], function (){
     Route::post('/favorite/{post}/add', 'FavoriteController@add')->name('post.favorite');
 
