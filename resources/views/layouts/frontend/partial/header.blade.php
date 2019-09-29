@@ -1,7 +1,7 @@
 <header>
     <div class="container-fluid position-relative no-side-padding">
 
-        <a href="{{route('indexpage')}}" class="logo"><img src="{{asset('assets/frontend/images/logo.png')}}" alt="Logo Image"></a>
+        <a href="{{route('indexpage')}}" class="logo">Tutorial Blog</a>
 
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
